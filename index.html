@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.2.0/swiper-bundle.min.css" integrity="sha512-s6khMl5GDS1HbQ5/SwL1wzMayPwHXPjKoBN5kHUTDqKEPkkGyEZWKyH2lQ3YO2q3dxueG3rE0NHjRawMHd2b6g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="py-2">
+        <div class="header-up d-flex flex-wrap justify-content-between align-items-center gap-3 px-3">
+            <a href="https://hacibayram.edu.tr/" target="_blank">
+              <img width="140" src="https://esps.arsivmedya.site/images/hbv-logo.svg.png" alt="" class="img-fluid">
+            </a>
+            <div class="d-flex flex-column gap-2 align-items-center">
+                <img width="240" src="https://esps.arsivmedya.site/images/flag.png" alt="" class="img-fluid">
+                <div class="text-center">
+                    <p style="font-size:13px;" class="mb-0">This project is funded by the European Union.</p>
+                    <p style="font-size:13px;" class="mb-0">Bu proje Avrupa Birliği tarafından finanse edilmektedir.</p>
+                    <p style="font-size:13px;" class="mb-0">هذا المشروع ممول من الاتحاد الأوروبي.</p>
+                    
+                </div>
+            </div>
+            <div class="d-flex flex-column gap-3 align-items-center">
+                <div class="d-flex gap-3">
+                    <a href="https://www.facebook.com/project.esps?mibextid=ZbWKwL"><i class="fa-brands fa-facebook-f fs-5 text-dark"></i></a>
+                    <a href="https://twitter.com/i/flow/login?redirect_after_login=%2FProjectEsps"><i class="fa-brands fa-twitter fs-5 text-dark"></i></a>
+                    <a href="https://www.instagram.com/project.esps/?igshid=NjIwNzIyMDk2Mg%3D%3D"><i class="fa-brands fa-instagram fs-5 text-dark"></i></a>
+                    <a href="https://www.linkedin.com/company/projectesps/about/?viewAsMember=true"><i class="fa-brands fa-linkedin fs-5 text-dark"></i></a>
+                </div>
+                <div class="d-flex gap-2">
+                    <a style="font-size: 17px;" href="" class="btn btn-sm btn-primary" target="_blank">EN <img width="29" height="29" src="data:image/png;base64,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" alt="" class="img-fluid ms-2"></a>
+                    <a style="font-size: 17px;" href="" class="btn btn-sm btn-secondary" target="_blank">TR <img width="29" height="29" src="https://tolerance-homes.com/storage/images/pages/qP0fv1mqZpQwoJDnLJSeaxis4WhOye64LrbNaPet.jpeg" alt="" class="img-fluid ms-3"></a>
+                    <a style="font-size: 17px;" href="" class="btn btn-sm btn-secondary" target="_blank">AR <img width="29" height="29" src="https://cdn.britannica.com/79/5779-004-DC479508/Flag-Saudi-Arabia.jpg" alt="" class="img-fluid ms-3"></a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-light py-3">
+            <div class="container">
+              <a class="navbar-brand" href="/"><img width="140" src="https://esps.arsivmedya.site/images/esps-logo.svg" alt="" class="img-fluid"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">ANASAYFA</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        HAKKIMIZDA
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="esps.html">ESPS</a></li>
+                      <li><a class="dropdown-item" href="#">Hedefler</a></li>
+                      <li><a class="dropdown-item" href="#">Beklenen Sonuçlar</a></li>
+                      <li><a class="dropdown-item" href="#">Organizasyon Şeması</a></li>
+                      <li><a class="dropdown-item" href="#">Kurumsal Kimlik Klavuzu</a></li>
+                      <li><a class="dropdown-item" href="#">Değerlendirme Komitesi</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">HABERLER</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">DUYURULAR</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        BURS
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">BURS BAŞVURU MODÜLÜ</a></li>
+                      <li><a class="dropdown-item" href="#">BURS BAŞVURU KLAVUZU</a></li>
+                      <li><a class="dropdown-item" href="#">BURS BAŞVURU TAKVİMİ</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        ETKİNLİKLER
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">MENTÖRLÜK</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">İLETİŞİM</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-search"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+      <!-- slider start -->
+      <section>
+          <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                  <div class="swiper-slide position-relative">
+                      <a href="/" class="d-block w-100">
+                          <img src="https://esps.arsivmedya.site/storage/images/slider.jpeg" alt="" class="img-fluid">
+                          <div class="slider-content position-absolute top-50 start-0 translate-middle-y text-white">
+                            <h2 class="display-4">ESPS Projesi Nedir?</h2>
+                            <p class="mb-0 fs-4">Öğrenci Burs Projemizi Tanıyın</p>
+                          </div>
+                      </a>
+                  </div>
+                  <div class="swiper-slide position-relative">
+                      <a href="/" class="d-block w-100">
+                          <img src="https://esps.arsivmedya.site/storage/images/WhatsApp Image 2023-08-29 at 13.03.54.jpeg" alt="" class="img-fluid">
+                          <div class="slider-content position-absolute top-50 start-0 translate-middle-y text-white">
+                            <h2 class="display-4">ESPS Proje Başvurusu</h2>
+                            <p class="mb-0 fs-4">Takvim ve Başvuru Şartlarını İnceleyin</p>
+                          </div>
+                      </a>
+                  </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+      </section>
+      <!-- slider finish -->
+  
+      <!-- slider down start -->
+      <section class="py-5">
+          <div class="container">
+              <div class="row g-3 d-flex justify-content-center">
+                  <div class="col-lg-3 col-md-6">
+                      <a href="" class="text-decoration-none">
+                        <div class="slider-down-card card border-0 bg-danger text-white px-3 rounded-0">
+                            <div class="card-body d-flex justify-content-center align-items-center text-center">
+                                <h3 class="h4">Burs Başvuru Modülü <br> <i class="fa-solid fa-arrow-right pt-3"></i></h3>
+                            </div>
+                        </div>
+                      </a>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <a href="" class="text-decoration-none">
+                      <div class="slider-down-card card border-0 bg-danger text-white px-3 rounded-0">
+                          <div class="card-body d-flex justify-content-center align-items-center text-center">
+                              <h3 class="h4">Burs Başvuru Klavuzu <br> <i class="fa-solid fa-arrow-right pt-3"></i></h3>
+                          </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <a href="" class="text-decoration-none">
+                      <div class="slider-down-card card border-0 bg-danger text-white px-3 rounded-0">
+                          <div class="card-body d-flex justify-content-center align-items-center text-center">
+                              <h3 class="h4">Burs Başvuru Takvimi <br> <i class="fa-solid fa-arrow-right pt-3"></i></h3>
+                          </div>
+                      </div>
+                    </a>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <!-- slider down finish -->
+  
+      <!-- what esps and twitter start -->
+      <section class="py-5">
+          <div class="container">
+              <div class="row g-3 d-flex align-items-center">
+                  <div class="col-lg-6 col-md-6">
+                      <h2 class="h1 text-primary mb-3">ESPS Nedir? <img src="https://esps.arsivmedya.site/images/image5.png" alt="" class="img-fluid"></h2>
+                      <p class="lead">Avrupa Birliği tarafından fon sağlanan ve Ankara Hacı Bayram Veli Üniversitesi’nin koordinatörlüğünde</p>
+                      <a href="/" class="btn btn-primary">Detaylı Bilgi Al <i class="fa-solid fa-chevron-right"></i></a>
+                  </div>
+                  <div class="col-lg-4 col-md-6 ms-auto">
+                      <div class="card">
+                          <div class="card-header d-flex justify-content-between align-items-center">
+                              <h3 class="h5">Tweets from @ProjectEsps</h3>
+                              <a href="/" class="btn btn-dark" target="_blank">Follow</a>
+                          </div>
+                          <div class="card-body">
+                              <i class="fa-brands fa-x-twitter text-twitter fs-1 mb-4"></i>
+                              <h3 class="h2 fw-bold">Nothing to see here - yet</h3>
+                              <p class="text-muted">When they Tweet, their Tweets will show up here.</p>
+                              <a href="/" class="btn btn-twitter btn-lg text-white px-4" target="_blank">View on Twitter</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              </div>
+      </section>
+      <!-- what esps and twitter finish -->
+  
+      <!-- events start -->
+      <section class="mb-5">
+        <div class="container">
+          <h2 class="h1 text-primary mb-4">Yaklaşan Etkinlikler <img src="https://esps.arsivmedya.site/images/image5.png" alt="" class="img-fluid"></h2>
+  
+          <div class="row mb-4">
+            <div class="col-md-3">
+              <div class="card bg-primary">
+                <div class="card-body">
+                    <div class="d-flex gap-3 align-items-center text-white">
+                      <i class="fa-solid fa-calendar-days fs-1"></i>
+                      <div>
+                        <h4>24 June 2022</h4>
+                        <span class="d-block">Conference</span>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="row g-3">
+            <div class="col-md-2">
+              <div class="card">
+                <div class="card-body py-4">
+                  <h2>Etkinlik Detayları</h2>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <h2>Etkinlik Detayları</h2>
+              <p>ESPS projesi lasman etkinliği ile projemizi kamuoyunu tanıtıyoruz.</p>
+              <a href="/" class="btn btn-primary">Daha Fazla <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+            <div class="col-md-3">
+              <img src="https://esps.arsivmedya.site/images/lansman.png" alt="" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- events finish -->
+  
+      <!-- universities start -->
+      <section class="mb-5">
+        <div class="container">
+          <div class="d-flex text-center justify-content-center align-items-center mb-4">
+            <div>
+              <img style="transform: scaleX(-1);" src="https://esps.arsivmedya.site/images/image5.png" alt="" class="img-fluid">
+            </div>
+            <div class="px-3 ff-montserrat">
+              <div class="fs-3 fst-italic ">Eş Başvurusu</div>
+              <h2 class="h1">Üniversiteler</h2>
+            </div>
+            <div>
+              <img src="https://esps.arsivmedya.site/images/image5.png" alt="" class="img-fluid">
+            </div>
+          </div>
+  
+          <div class="d-flex gap-3 flex-wrap justify-content-center">
+            <a href="https://hacibayram.edu.tr/" class="btn circle shadow-lg" target="_blank">
+              <img src="https://esps.arsivmedya.site/images/haci_bayram.png" alt="" class="img-fluid">
+            </a>
+            <a href="https://hacibayram.edu.tr/" class="btn circle shadow-lg" target="_blank">
+              <img src="https://esps.arsivmedya.site/images/%C3%A7ukurova.png" alt="" class="img-fluid">
+            </a>
+            <a href="https://www.artuklu.edu.tr/" class="btn circle shadow-lg" target="_blank">
+              <img src="https://esps.arsivmedya.site/images/gaziantep.png" alt="" class="img-fluid">
+            </a>
+            <a href="https://hacibayram.edu.tr/" class="btn circle shadow-lg" target="_blank">
+              <img src="https://esps.arsivmedya.site/images/harran.png" alt="" class="img-fluid">
+            </a>
+            <a href="https://hacibayram.edu.tr/" class="btn circle shadow-lg" target="_blank">
+              <img src="https://esps.arsivmedya.site/images/iskenderun.png" alt="" class="img-fluid">
+            </a>
+            <a href="https://hacibayram.edu.tr/" class="btn circle shadow-lg" target="_blank">
+              <img src="https://esps.arsivmedya.site/images/kilis.png" alt="" class="img-fluid">
+            </a>
+            <a href="https://hacibayram.edu.tr/" class="btn circle shadow-lg" target="_blank">
+              <img src="https://esps.arsivmedya.site/images/mardim.png" alt="" class="img-fluid">
+            </a>
+            <a href="https://hacibayram.edu.tr/" class="btn circle shadow-lg" target="_blank">
+              <img src="https://esps.arsivmedya.site/images/mersin.png" alt="" class="img-fluid">
+            </a>
+            <a href="https://hacibayram.edu.tr/" class="btn circle shadow-lg" target="_blank">
+              <img src="https://esps.arsivmedya.site/images/simam.png" alt="" class="img-fluid">
+            </a>
+            <a href="https://hacibayram.edu.tr/" class="btn circle shadow-lg" target="_blank">
+              <img src="https://esps.arsivmedya.site/images/mustafa_kemal.png" alt="" class="img-fluid">
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- universities finish -->
+  
+      <!-- footer up menu start -->
+      <section class="footer-up py-5">
+        <div class="container">
+          <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+              <h3 class="mb-3">ESPS</h3>
+              <p>Düzenleyeceğimiz etkinlikler, eğitimler, kurslar ve kariyer günleriyle geleceğinizi şimdiden şekillendirebilirsiniz. Kuruluşunuzun avantajlarından yararlanmak için bize katılın!</p>
+              <div class="d-flex gap-3">
+                <a href="#" class="btn btn-light">
+                  <i class="fa-brands fa-facebook-f fs-5 text-primary"></i>
+                </a>
+                <a href="#" class="btn btn-light">
+                  <i class="fa-brands fa-twitter fs-5 text-primary"></i>
+                </a>
+                <a href="#" class="btn btn-light">
+                  <i class="fa-brands fa-instagram fs-5 text-primary"></i>
+                </a>
+                <a href="#" class="btn btn-light">
+                  <i class="fa-brands fa-linkedin fs-5 text-primary"></i>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="d-flex gap-2 mb-3">
+                <i class="fa-solid fa-map"></i>
+                <span>Ankara Hacı Bayram Veli Üniversitesi ESPS Proje Ofisi - Emniyet Mahallesi Abant Sokak No: 10/2 E Blok Kat:9 06500 Yenimahalle / ANKARA</span>
+              </div>
+              <div class="d-flex gap-2 mb-3">
+                <i class="fa-solid fa-envelope"></i>
+                <span>esps@hbv.edu.tr</span>
+              </div>
+              <div class="d-flex gap-2">
+                <i class="fa-solid fa-envelope"></i>
+                <span>+90 0312 546 17 80</span>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <h3 class="mb-3">ESPS PROJESİ</h3>
+              <div class="d-flex flex-column gap-2">
+                <a href="#" class="text-decoration-none text-dark">Anasayfa</a>
+                <a href="#" class="text-decoration-none text-dark">Hakkımızda</a>
+                <a href="#" class="text-decoration-none text-dark">Bize Ulaşın</a>
+                <a href="#" class="text-decoration-none text-dark">Haberler</a>
+                <a href="#" class="text-decoration-none text-dark">KVKK Politikası</a>
+                <a href="#" class="text-decoration-none text-dark">Çerez Aydınlatma Metni ve Gizlilik Politikası</a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <h3 class="mb-3">BAĞLANTILAR</h3>
+              <div class="d-flex flex-column gap-2">
+                <a href="#" class="text-decoration-none text-dark">İş haritalaması</a>
+                <a href="#" class="text-decoration-none text-dark">İhtiyaç Analizi</a>
+                <a href="#" class="text-decoration-none text-dark">Ortaklar</a>
+                <a href="#" class="text-decoration-none text-dark">Etkinlikler</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- footer up menu finish -->
+    </main>
+
+    <footer class="bg-primary p-3">
+      <div class="container text-center text-white">
+        <p class="mb-0 fs-5">© 2023 ESPS Projesi</p>
+        <p class="mb-0">© designed by <a href="">Arşv Medya</a></p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.2.0/swiper-bundle.min.js" integrity="sha512-QwpsxtdZRih55GaU/Ce2Baqoy2tEv9GltjAG8yuTy2k9lHqK7VHHp3wWWe+yITYKZlsT3AaCj49ZxMYPp46iJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            loop: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+
+  </body>
+</html>
